@@ -15,7 +15,7 @@ import java.util.List;
 @Configuration
 public class InitialDataConfig {
     @Bean
-    CommandLineRunner commandLineRunnerCourse(CourseRepository courseRepository, TeacherRepository teacherRepository, StudentRepository studentRepository) {
+    CommandLineRunner commandLineRunner(CourseRepository courseRepository, TeacherRepository teacherRepository, StudentRepository studentRepository) {
         return args -> {
             Student arne = new Student (1L, 123L, "Arne", "Andersson");
             Student kalle = new Student(2L, 1234L,"Kalle", "Karlsson");
