@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class Student {
+public class Teacher {
     @Id
     @SequenceGenerator(
             name = "student_sequence",
@@ -24,12 +24,13 @@ public class Student {
     )
     private Long id;
     private int personalId;
+    private int salary;
     private String name;
     private String surname;
 
-    public Student(Long id,int personalId, String name, String surname) {
-        this.id = id;
+    public Teacher(int personalId, int salary, String name, String surname) {
         this.personalId = personalId;
+        this.salary = salary;
         this.name = name;
         this.surname = surname;
     }
