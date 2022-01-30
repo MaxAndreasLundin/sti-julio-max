@@ -13,9 +13,9 @@ public class TeacherConfig {
     @Bean
     CommandLineRunner commandLineRunnerTeacher(TeacherRepository repository) {
         return args -> {
-            Teacher moa = new Teacher(1234, 250, "Moa", "Gunnarsson");
+            Teacher moa = new Teacher(1234L, 250L, "Moa", "Gunnarsson");
 
-            Teacher anna = new Teacher(1234, 250, "Anna", "Hansson");
+            Teacher anna = new Teacher(1234L, 250L, "Anna", "Hansson");
 
             repository.saveAll(List.of(moa, anna));
         };

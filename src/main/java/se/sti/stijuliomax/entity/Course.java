@@ -23,11 +23,11 @@ public class Course {
             generator = "student_sequence"
     )
     private Long id;
-    private int courseId;
-    private int points;
-    private int hours;
+    private Long courseId;
+    private Long points;
+    private Long hours;
 
-    public Course(int courseId, int points, int hours) {
+    public Course(Long courseId, Long points, Long hours) {
         this.courseId = courseId;
         this.points = points;
         this.hours = hours;

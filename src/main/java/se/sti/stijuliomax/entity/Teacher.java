@@ -23,12 +23,12 @@ public class Teacher {
             generator = "student_sequence"
     )
     private Long id;
-    private int personalId;
-    private int salary;
+    private Long personalId;
+    private Long salary;
     private String name;
     private String surname;
 
-    public Teacher(int personalId, int salary, String name, String surname) {
+    public Teacher(Long personalId, Long salary, String name, String surname) {
         this.personalId = personalId;
         this.salary = salary;
         this.name = name;

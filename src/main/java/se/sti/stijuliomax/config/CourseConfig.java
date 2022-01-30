@@ -13,9 +13,9 @@ public class CourseConfig {
     @Bean
     CommandLineRunner commandLineRunnerCourse(CourseRepository repository) {
         return args -> {
-            Course java = new Course(444, 25, 80);
+            Course java = new Course(444L, 25L, 80L);
 
-            Course sql = new Course(555, 25, 80);
+            Course sql = new Course(555L, 25L, 80L);
 
             repository.saveAll(List.of(java, sql));
         };

@@ -23,11 +23,11 @@ public class Student {
             generator = "student_sequence"
     )
     private Long id;
-    private int personalId;
+    private Long personalId;
     private String name;
     private String surname;
 
-    public Student(Long id,int personalId, String name, String surname) {
+    public Student(Long id,Long personalId, String name, String surname) {
         this.id = id;
         this.personalId = personalId;
         this.name = name;
