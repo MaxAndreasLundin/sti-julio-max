@@ -1,10 +1,12 @@
 package se.sti.stijuliomax.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Table
 @Entity
@@ -27,6 +29,9 @@ public class Teacher {
     private Long salary;
     private String name;
     private String surname;
+
+    @OneToMany(mappedBy = "teacher")
+    private Set<Course> courses;
 
     public Teacher(Long personalId, Long salary, String name, String surname) {
         this.personalId = personalId;

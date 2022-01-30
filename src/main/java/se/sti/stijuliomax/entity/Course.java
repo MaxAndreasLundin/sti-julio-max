@@ -1,5 +1,6 @@
 package se.sti.stijuliomax.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -26,6 +27,10 @@ public class Course {
     private Long courseId;
     private Long points;
     private Long hours;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
     public Course(Long courseId, Long points, Long hours) {
         this.courseId = courseId;
