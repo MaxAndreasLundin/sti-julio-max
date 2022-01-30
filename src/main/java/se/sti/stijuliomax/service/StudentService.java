@@ -7,6 +7,7 @@ import se.sti.stijuliomax.entity.Student;
 import se.sti.stijuliomax.repository.StudentRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -16,6 +17,10 @@ public class StudentService {
     @Autowired
     public List<Student> getStudent() {
         return studentRepository.findAll();
+    }
+
+    public Optional<Student> findById(Long studentId) {
+        return studentRepository.findById(studentId);
     }
 
     public void addNewStudent(Student student) {
