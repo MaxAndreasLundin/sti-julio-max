@@ -23,15 +23,15 @@ public class InitialDataConfig {
             Teacher moa = new Teacher(1985L, 250L, "Moa", "Gunnarsson");
             Teacher anna = new Teacher(1975L, 250L, "Anna", "Hansson");
 
-            Course java = new Course(444L, 25L, 80L);
+            Course java = new Course(25L, 80L);
             java.setTeacher(moa);
-            Course sql = new Course(555L, 25L, 80L);
+            Course sql = new Course(25L, 80L);
             sql.setTeacher(anna);
 
-            //arne.setCourses(java);
-            arne.setCourses(sql);
-            //kalle.setCourses(java);
-            kalle.setCourses(sql);
+            //arne.getCourses().add(java);
+            arne.getCourses().add(sql);
+            //kalle.getCourses().add(java);
+            kalle.getCourses().add(sql);
 
             teacherRepository.saveAll(List.of(moa, anna));
             courseRepository.saveAll(List.of(java, sql));

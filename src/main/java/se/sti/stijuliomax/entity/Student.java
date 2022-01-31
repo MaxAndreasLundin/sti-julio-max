@@ -32,8 +32,4 @@ public class Student {
         this.name = name;
         this.surname = surname;
     }
-
-    public void setCourses(Course course) {
-        courses.add(course);
-    }
 }

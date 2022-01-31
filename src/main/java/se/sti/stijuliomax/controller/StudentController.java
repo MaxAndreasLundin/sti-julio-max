@@ -23,28 +23,28 @@ public class StudentController {
         return studentService.getStudent();
     }
 
-    @GetMapping(path = "{studentId}")
-    public Optional<Student> findById(@PathVariable("studentId") Long studentId) {
-        return studentService.findById(studentId);
+    @GetMapping(path = "{personalId}")
+    public Optional<Student> findById(@PathVariable("personalId") Long personalId) {
+        return studentService.findById(personalId);
     }
 
-    @PutMapping(path = "{studentId}/addCourse/{courseId}")
-    public Student addCourse(@PathVariable("studentId") Long studentId, @PathVariable("courseId") Long courseId) {
-        return studentService.addCourse(studentId, courseId);
+    @PutMapping(path = "{personalId}/addCourse/{courseId}")
+    public Student addCourse(@PathVariable("personalId") Long personalId, @PathVariable("courseId") Long courseId) {
+        return studentService.addCourse(personalId, courseId);
     }
 
-    @PutMapping(path = "{studentId}/removeCourse/{courseId}")
-    public Student removeCourse(@PathVariable("studentId") Long studentId, @PathVariable("courseId") Long courseId) {
-        return studentService.removeCourse(studentId, courseId);
+    @PutMapping(path = "{personalId}/removeCourse/{courseId}")
+    public Student removeCourse(@PathVariable("personalId") Long personalId, @PathVariable("courseId") Long courseId) {
+        return studentService.removeCourse(personalId, courseId);
     }
 
     @PostMapping
-    public void addNewStudent(@RequestBody Student student) {
-        studentService.addNewStudent(student);
+    public Student addNewStudent(@RequestBody Student student) {
+       return studentService.addNewStudent(student);
     }
 
-    @DeleteMapping(path = "{studentId}")
-    public void deleteStudent(@PathVariable("studentId") Long studentId) {
-        studentService.deleteStudent(studentId);
+    @DeleteMapping(path = "{personalId}")
+    public void deleteStudent(@PathVariable("personalId") Long personalId) {
+        studentService.deleteStudent(personalId);
     }
 }

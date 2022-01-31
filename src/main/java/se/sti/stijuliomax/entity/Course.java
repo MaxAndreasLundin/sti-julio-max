@@ -26,7 +26,6 @@ public class Course {
             generator = "student_sequence"
     )
     private Long id;
-    private Long courseId;
     private Long points;
     private Long hours;
     @JsonIgnore
@@ -37,14 +36,9 @@ public class Course {
     @ManyToMany(mappedBy = "courses")
     private Set<Student> students = new HashSet<>();
 
-    public Course(Long courseId, Long points, Long hours) {
-        this.courseId = courseId;
+    public Course(Long points, Long hours) {
         this.points = points;
         this.hours = hours;
-    }
-
-    public void setStudents(Student student) {
-        students.add(student);
     }
 }
 

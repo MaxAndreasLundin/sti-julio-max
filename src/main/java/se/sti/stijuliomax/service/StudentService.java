@@ -1,6 +1,7 @@
 package se.sti.stijuliomax.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,35 +24,35 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public Optional<Student> findById(Long studentId) {
-        return studentRepository.findById(studentId);
+    public Optional<Student> findById(Long personalId) {
+        return studentRepository.findById(personalId);
     }
 
     @Transactional
-    public Student addCourse(Long studentId, Long courseId) {
-        Student student = studentRepository.findById(studentId).orElseThrow();
+    public Student addCourse(Long personalId, Long courseId) {
+        Student student = studentRepository.findById(personalId).orElseThrow();
         Course course = courseRepository.findById(courseId).orElseThrow();
         student.getCourses().add(course);
         return student;
     }
 
     @Transactional
-    public Student removeCourse(Long studentId, Long courseId) {
-        Student student = studentRepository.findById(studentId).orElseThrow();
+    public Student removeCourse(Long personalId, Long courseId) {
+        Student student = studentRepository.findById(personalId).orElseThrow();
         Course course = courseRepository.findById(courseId).orElseThrow();
         student.getCourses().remove(course);
         return student;
     }
 
-    public void addNewStudent(Student student) {
-        studentRepository.save(student);
+    public Student addNewStudent(Student student) {
+        return studentRepository.save(student);
     }
 
-    public void deleteStudent(Long studentId) {
-        boolean exists = studentRepository.existsById(studentId);
+    public void deleteStudent(Long personalId) {
+        boolean exists = studentRepository.existsById(personalId);
         if (!exists) {
-            throw new IllegalStateException("student with id " + studentId + " does not exists");
+            throw new IllegalStateException("student with id " + personalId + " does not exists");
         }
-        studentRepository.deleteById(studentId);
+        studentRepository.deleteById(personalId);
     }
 }
