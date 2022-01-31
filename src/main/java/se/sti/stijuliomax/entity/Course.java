@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Table
 @Entity
@@ -31,11 +33,18 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "courses")
+    private Set<Student> students = new HashSet<>();
 
     public Course(Long courseId, Long points, Long hours) {
         this.courseId = courseId;
         this.points = points;
         this.hours = hours;
+    }
+
+    public void setStudents(Student student) {
+        students.add(student);
     }
 }
 
