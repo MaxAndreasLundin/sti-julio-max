@@ -17,8 +17,8 @@ public class InitialDataConfig {
     @Bean
     CommandLineRunner commandLineRunner(CourseRepository courseRepository, TeacherRepository teacherRepository, StudentRepository studentRepository) {
         return args -> {
-            Student arne = new Student(1L, 123L, "Arne", "Andersson");
-            Student kalle = new Student(2L, 1234L, "Kalle", "Karlsson");
+            Student arne = new Student(1989L,"Arne", "Andersson");
+            Student kalle = new Student(2001L, "Kalle", "Karlsson");
 
             Teacher moa = new Teacher(1234L, 250L, "Moa", "Gunnarsson");
             Teacher anna = new Teacher(1234L, 250L, "Anna", "Hansson");

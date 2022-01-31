@@ -15,17 +15,8 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class Student {
     @Id
-    @SequenceGenerator(
-            name = "student_sequence",
-            sequenceName = "student_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "student_sequence"
-    )
+    @Column(unique=true)
     private Long id;
-    private Long personalId;
     private String name;
     private String surname;
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -36,9 +27,8 @@ public class Student {
     )
     private Set<Course> courses = new HashSet<>();
 
-    public Student(Long id, Long personalId, String name, String surname) {
+    public Student(Long id, String name, String surname) {
         this.id = id;
-        this.personalId = personalId;
         this.name = name;
         this.surname = surname;
     }
