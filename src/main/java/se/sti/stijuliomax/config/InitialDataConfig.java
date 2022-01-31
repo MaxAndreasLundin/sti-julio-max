@@ -28,9 +28,9 @@ public class InitialDataConfig {
             Course sql = new Course(555L, 25L, 80L);
             sql.setTeacher(anna);
 
-            arne.setCourses(java);
+            //arne.setCourses(java);
             arne.setCourses(sql);
-            kalle.setCourses(java);
+            //kalle.setCourses(java);
             kalle.setCourses(sql);
 
             teacherRepository.saveAll(List.of(moa, anna));

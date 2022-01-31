@@ -23,9 +23,19 @@ public class StudentController {
         return studentService.getStudent();
     }
 
-    @GetMapping(path = "{findById}")
-    public Optional<Student> findById(@PathVariable("findById") Long studentId) {
+    @GetMapping(path = "{studentId}")
+    public Optional<Student> findById(@PathVariable("studentId") Long studentId) {
         return studentService.findById(studentId);
+    }
+
+    @PutMapping(path = "{studentId}/addCourse/{courseId}")
+    public Student addCourse(@PathVariable("studentId") Long studentId, @PathVariable("courseId") Long courseId) {
+        return studentService.addCourse(studentId, courseId);
+    }
+
+    @PutMapping(path = "{studentId}/removeCourse/{courseId}")
+    public Student removeCourse(@PathVariable("studentId") Long studentId, @PathVariable("courseId") Long courseId) {
+        return studentService.removeCourse(studentId, courseId);
     }
 
     @PostMapping
