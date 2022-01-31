@@ -17,11 +17,11 @@ public class InitialDataConfig {
     @Bean
     CommandLineRunner commandLineRunner(CourseRepository courseRepository, TeacherRepository teacherRepository, StudentRepository studentRepository) {
         return args -> {
-            Student arne = new Student(1989L,"Arne", "Andersson");
+            Student arne = new Student(1989L, "Arne", "Andersson");
             Student kalle = new Student(2001L, "Kalle", "Karlsson");
 
-            Teacher moa = new Teacher(1234L, 250L, "Moa", "Gunnarsson");
-            Teacher anna = new Teacher(1234L, 250L, "Anna", "Hansson");
+            Teacher moa = new Teacher(1985L, 250L, "Moa", "Gunnarsson");
+            Teacher anna = new Teacher(1975L, 250L, "Anna", "Hansson");
 
             Course java = new Course(444L, 25L, 80L);
             java.setTeacher(moa);
