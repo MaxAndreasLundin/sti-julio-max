@@ -2,13 +2,14 @@ Welcome to Max & Julios wondrous magic show.
 Follow the instructions below to witness the magic!!!
 
 1. You will need docker installed on your computer. Download Docker Desktop here https://www.docker.com/products/docker-desktop
-2. Navigate to the root of the project folder with your favorite terminal. The terminal will not be interactive, you will need 3 terminal windows.
-3. In your first terminal window enter ./postgres-start.sh. This will start the postgres server in a docker container and download the correct image.
-4. In your second terminal window enter ./docker-build.sh. This will compile the project and create a docker image.
-5. In your second terminal window enter ./docker-start.sh. This will start the docker image you created in the previous step.
-6. The application is now running in a docker container. To access the application open your web browser and enter http://localhost:8080/swagger-ui.html.
-7. Use your remaining terminal window to close the application buy first running ./docker-stop.sh.
-8. Use your remaining terminal window to close the server by running ./postgres-stop.sh.
+2. Start Docker Desktop.
+3. Navigate to the root of the project folder with your favorite terminal. The terminal will not be interactive, you will need 3 terminal windows.
+4. In your first terminal window enter ./postgres-start.sh. This will start the postgres server in a docker container and download the correct image if it's missing.
+5. In your second terminal window enter ./docker-build.sh. This will compile the project and create a docker image.
+6. In your second terminal window enter ./docker-start.sh. This will start the docker image you created in the previous step.
+7. The application is now running in a docker container. To access the application open your web browser and enter http://localhost:8080/swagger-ui.html.
+8. Use your remaining terminal window to close the application buy first running ./docker-stop.sh.
+9. Use your remaining terminal window to close the server by running ./postgres-stop.sh.
 
 
 ----Info----   
