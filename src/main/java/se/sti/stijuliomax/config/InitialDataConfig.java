@@ -17,20 +17,18 @@ public class InitialDataConfig {
     @Bean
     CommandLineRunner commandLineRunner(CourseRepository courseRepository, TeacherRepository teacherRepository, StudentRepository studentRepository) {
         return args -> {
-            Student arne = new Student(1989L, "Arne", "Andersson");
-            Student kalle = new Student(2001L, "Kalle", "Karlsson");
+            Student arne = new Student(198905083612L, "Arne", "Andersson");
+            Student kalle = new Student(197003056513L, "Kalle", "Karlsson");
 
-            Teacher moa = new Teacher(1985L, 250L, "Moa", "Gunnarsson");
-            Teacher anna = new Teacher(1975L, 250L, "Anna", "Hansson");
+            Teacher moa = new Teacher(198501011010L, 250L, "Moa", "Gunnarsson");
+            Teacher anna = new Teacher(197502022020L, 300L, "Anna", "Hansson");
 
             Course java = new Course(25L, 80L);
             java.setTeacher(moa);
-            Course sql = new Course(25L, 80L);
+            Course sql = new Course(35L, 90L);
             sql.setTeacher(anna);
 
-            //arne.getCourses().add(java);
             arne.getCourses().add(sql);
-            //kalle.getCourses().add(java);
             kalle.getCourses().add(sql);
 
             teacherRepository.saveAll(List.of(moa, anna));
