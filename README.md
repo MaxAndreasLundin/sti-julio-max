@@ -12,7 +12,7 @@ Welcome to Max & Julios wondrous magic show. Follow the instructions below to wi
    step.
 7. The application is now running in a docker container. To access the application open your web browser and
    enter http://localhost:8080/swagger-ui.html.
-8. Use your remaining terminal window to close the application buy first running ./docker-stop.sh.
+8. Use your remaining terminal window to close the application by first running ./docker-stop.sh.
 9. Use your remaining terminal window to close the server by running ./postgres-stop.sh.
 
 ----Info----   
