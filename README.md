@@ -1,3 +1,5 @@
+Spring boot project for the course Java B.
+
 Welcome to Max & Julios wondrous magic show. Follow the instructions below to witness the magic!!!
 
 1. You will need docker installed on your computer. Download Docker Desktop
